@@ -224,9 +224,9 @@ def prediction():
 @app.route('/about')
 def about():
     team = [
-        {'name': 'Saad Zafar', 'desc': 'Lead Developer', 'image': 'member1.jpg'},
-        {'name': 'Humayun Farasat', 'desc': 'Data Analyst', 'image': 'member2.jpg'},
-        {'name': 'Arsaln', 'desc': 'ML Engineer', 'image': 'member3.jpg'}
+        {'name': 'UMME RUBAB', 'desc': 'Lead Developer', 'image': 'member1.jpg'},
+        {'name': 'Mahlaka Arshad', 'desc': 'Data Analyst', 'image': 'member2.jpg'},
+        {'name': 'Faiza tabasuum', 'desc': 'ML Engineer', 'image': 'member3.jpg'}
     ]
     return render_template('about.html', team=team)
 
