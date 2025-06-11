@@ -1,0 +1,185 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* General Styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e2f;
+    font-family: 'Roboto', sans-serif;
+    color: #d3d3d3;
+}
+
+main {
+    flex: 1;
+    color: #ffffff;
+    /* Ensure all text in main is visible */
+    padding: 20px;
+    /* Add padding to prevent content cutoff */
+}
+
+/* Ensure headings and paragraphs in main are visible and spaced */
+main h1,
+main h2,
+main h3 {
+    color: #00e6e6;
+    /* Bright cyan for headings */
+    padding-bottom: 10px;
+    /* Space below headings */
+    margin-top: 10px;
+    /* Space above headings */
+}
+
+main p {
+    color: #e0e0e0;
+    /* Light gray for paragraphs */
+}
+
+/* Navbar */
+.navbar {
+    background: #151521 !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #00c4cc !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: #00e6e6 !important;
+    transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+    background: #252537;
+    border: 1px solid #00c4cc;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    /* Add padding for text space */
+    min-height: 300px;
+    /* Ensure space for text below images */
+    color: #ffffff;
+    /* Ensure text in cards is visible */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 196, 204, 0.3);
+}
+
+/* Buttons */
+.btn-primary,
+.gradient-btn {
+    background: #00c4cc;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.gradient-btn:hover {
+    background: #00e6e6;
+    box-shadow: 0 0 10px #00c4cc;
+}
+
+/* Images */
+.img-fluid {
+    border-radius: 8px;
+    border: 1px solid #00c4cc;
+    transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+    background: #151521;
+    color: #d3d3d3;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Form Controls */
+.form-control {
+    background: #2c2c3d;
+    border: 1px solid #00c4cc;
+    border-radius: 5px;
+    color: #ffffff !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #a0a0a0;
+    opacity: 1;
+}
+
+.form-control:focus {
+    background: #2c2c3d;
+    border-color: #00e6e6;
+    color: #ffffff;
+    box-shadow: 0 0 6px rgba(0, 230, 230, 0.4);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e2f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00c4cc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00e6e6;
+}
+
+/* Model Accuracy Card Override */
+.card>.bg-dark {
+    background: #252537 !important;
+    border: 1px solid #00c4cc;
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 196, 204, 0.2);
+}
+
+.card>.bg-dark p {
+    color: #e0e0e0;
+}
+
+.card>.bg-dark h4 {
+    color: #00e6e6;
+    margin-bottom: 0.75rem;
+}

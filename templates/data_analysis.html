@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block title %}Data Analysis{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header bg-transparent border-bottom">
+        <h2>Data Analysis</h2>
+    </div>
+    <div class="card-body">
+        <ul class="nav nav-tabs" id="dataTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="summary-tab" data-bs-toggle="tab" href="#summary" role="tab">Summary</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="missing-tab" data-bs-toggle="tab" href="#missing" role="tab">Missing Values</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="class-tab" data-bs-toggle="tab" href="#class" role="tab">Class Distribution</a>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" id="dataTabContent">
+            <div class="tab-pane fade show active" id="summary" role="tabpanel">
+                <div class="table-responsive">
+                    {{ summary.head | safe }}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="missing" role="tabpanel">
+                <ul class="list-group" style="max-height: 300px; overflow-y: auto;">
+                    {% for col, count in summary.missing.items() %}
+                    <li class="list-group-item bg-dark text-light">{{ col }}: {{ count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="class" role="tabpanel">
+                <img src="{{ url_for('static', filename='images/class_dist.png') }}" class="img-fluid"
+                    alt="Class Distribution">
+                <p class="mt-3">Rows: {{ summary.rows }}, Columns: {{ summary.columns }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

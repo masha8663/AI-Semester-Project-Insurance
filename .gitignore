@@ -1,0 +1,20 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+
+# Environment files
+.env
+
+# Model files
+*.pkl
+
+# CSV files (dataset)
+*.csv
+
+# Logs and temporary files
+*.log
+*.tmp

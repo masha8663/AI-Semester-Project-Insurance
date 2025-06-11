@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}Visualization{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header bg-transparent border-bottom">
+        <h2>Visualizations</h2>
+    </div>
+    <div class="card-body text-center">
+        <p class="mb-3">Correlation heatmap of the top 20 numerical features (red: positive, blue: negative).</p>
+        <img src="{{ url_for('static', filename='images/corr_matrix.png') }}" class="img-fluid"
+            alt="Correlation Matrix">
+        <p class="mt-2"><small><a href="{{ url_for('static', filename='images/corr_matrix.png') }}" target="_blank">Full
+                    Size</a></small></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block title %}Prediction{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header bg-transparent border-bottom">
+        <h2>Predict Insurance Claim Risk</h2>
+    </div>
+    <div class="card-body">
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        <form method="POST">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+                {% for feat in original_features %}
+                <div class="col">
+                    <label for="{{ feat }}">{{ feat }}</label>
+                    <input type="text" class="form-control" id="{{ feat }}" name="{{ feat }}"
+                        placeholder="Enter {{ feat }}" required>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Predict</button>
+        </form>
+        <div class="mt-4">
+            <h4>Model Accuracies</h4>
+            <div class="card bg-dark p-3">
+                <p><strong>Random Forest:</strong> {{ '{:.2f}'.format(rf_accuracy * 100) }}%</p>
+                <p><strong>ANN:</strong> {{ '{:.2f}'.format(ann_accuracy * 100) }}%</p>
+            </div>
+        </div>
+        {% if prediction %}
+        <div class="mt-4">
+            <h4>Results</h4>
+            <div class="card bg-dark p-3">
+                <p><strong>Random Forest:</strong> {{ prediction.rf }} ({{ '{:.2f}'.format(prediction.rf_acc * 100) }}%)
+                </p>
+                <p><strong>ANN:</strong> {{ prediction.ann }} ({{ '{:.2f}'.format(prediction.ann_acc * 100) }}%)</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
